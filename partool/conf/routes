@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+GET		/										Application.home
+GET		/getTypes								CdrTypesController.getTypes
+GET		/getUsageTypes							CdrTypesController.getUsageTypes
+GET		/getTypesWithUsage						CdrTypesController.getAll
+GET     /profile								CdrController.getCdrs
+GET		/changeProperties.html					Application.changeProperties
+ 
+# Import Secure routes
+*       /                                       module:secure
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+

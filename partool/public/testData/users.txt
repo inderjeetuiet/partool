@@ -1,0 +1,5 @@
+INSERT INTO users (login, password) VALUES ('admin', 'admin');
+INSERT INTO users (login, password) VALUES ('zeljko', 'zex');
+INSERT INTO users (login, password) VALUES ('zana', '66oDHQ');
+INSERT INTO users (login, password) VALUES ('zlatko', '230176');
+INSERT INTO users (login, password) VALUES ('tamara', 'tamy');

@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset='UTF-8'/>
+	<title>PARTool: Change Propeties</title>
+    
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/jquery.datepick.css" />
+	<link rel="stylesheet" type="text/css" href="public/stylesheets/smoothness/jquery-ui-1.8.16.custom.css" />
+	<link rel="Stylesheet" type="text/css" href="public/stylesheets/PARToolStyle.css" />
+    <script type="text/javascript" src="public/javascripts/jquery-1.6.4.js"></script>
+	<script type="text/javascript" src="public/javascripts/raphael.js"></script>
+	<script type="text/javascript" src="public/javascripts/jquery.datepick.js"></script>    
+	<script type="text/javascript" src="public/javascripts/dummyData.js"></script>
+	<script type="text/javascript" src="public/javascripts/jscolor/jscolor.js"></script>
+	<script type="text/javascript" src="public/javascripts/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="public/javascripts/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="public/javascripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="public/javascripts/PARToolFunctionpopup.js"></script>
+ </head>
+  <body>    
+ <div id="popuptop">
+        <div id="popupTopTabs-1">
+            <fieldset>
+                <legend>Search subscriber</legend>
+           
+				<p>The IMSI or MSISDN number is: <b id='imvalue'></b> </p> 
+				</p>
+                <br />
+            </fieldset>
+            <fieldset>
+                <legend>Visualization</legend>
+                <label  class="labelprops" for="measureType"> Measure type:</label>
+				<select id="measureType" class="measureType">
+				  <option value="count">Number of calls</option>
+				  <option value="duration">Duration</option>
+				  <option value="ratedAmount">Rated amount</option>
+				  <option value="discountedAmount">Discounted amount</option>
+                </select>
+                <label for="aggregationType">
+                    Aggregation:</label>
+                <input type="radio" id="aggregatesum" class="aggregationType1" name="aggregationType1" value="sum" checked="checked" />SUM
+                <input type="radio" id="aggregateavg" class="aggregationType1" name="aggregationType1" value="avg" />AVG
+                <div id="popuptopRows">
+                </div>
+            </fieldset>
+            <button id="addSubscriberTop">Search</button>
+        </div>
+    </div>
+            </body>
+              <script type="text/javascript">
+			  imsivalue1 = window.opener.document.getElementById('searchParameterTop').value;
+			  document.getElementById('imvalue').innerHTML = imsivalue1;
+        	  var requestCdrTypesUrl11 = #{jsAction @CdrTypesController.getAll()/}
+			  var subscriberDataUrl1 = #{jsAction @CdrController.getCdrs(':searchValue',':startDate',':endDate',':aggregateType',':searchType')/}
+			  
+		
+    </script>
+ </html>

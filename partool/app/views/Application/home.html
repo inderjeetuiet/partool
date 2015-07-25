@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'/>
+	<title>PARTool</title>
+	<link rel="stylesheet" type="text/css" href="public/stylesheets/jquery.datepick.css" />
+	<link rel="stylesheet" type="text/css" href="public/stylesheets/smoothness/jquery-ui-1.8.16.custom.css" />
+	<link rel="Stylesheet" type="text/css" href="public/stylesheets/PARToolStyle.css" />
+
+	<script type="text/javascript" src="public/javascripts/jquery-1.6.4.js"></script>
+	<script type="text/javascript" src="public/javascripts/raphael.js"></script>
+	<script type="text/javascript" src="public/javascripts/jquery.datepick.js"></script>
+
+	<script type="text/javascript" src="public/javascripts/dummyData.js"></script>
+	<script type="text/javascript" src="public/javascripts/jscolor/jscolor.js"></script>
+	<script type="text/javascript" src="public/javascripts/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="public/javascripts/PARToolFunctions.js"></script>
+	<script type="text/javascript" src="public/javascripts/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="public/javascripts/jquery.validate.js"></script>
+	<!--        <script type="text/javascript" src="public/javascripts/jquery.datepick.validation.js"></script> -->
+  </head>
+  <body>
+	<script type="text/javascript">
+	      //this line creates an URL that Play! uses
+        var requestCdrTypesUrl = #{jsAction @CdrTypesController.getAll()/}
+		var subscriberDataUrl = #{jsAction @CdrController.getCdrs(':searchValue',':startDate',':endDate',':aggregateType',':searchType')/} 
+    </script>
+	<a class="logout" href="@{Secure.logout()}" >Logout</a>
+    <div id="top">
+	 
+            <ul>
+		  <li><a href="#leftTopTabs-1">Search profile</a></li>
+          </ul>
+          
+       
+       <div id="leftTopTabs-1">
+            <fieldset>
+                <legend>Search subscriber</legend>
+                <input type="radio" id="searchByImsiTop" name="searchByTypeTop" class="searchByType" value="IMSI" checked="checked" />
+                <label for="searchByImsiTop"> IMSI</label>&nbsp;
+                <input type="radio" id="searchByMSISDNTop" name="searchByTypeTop" class="searchByType" value="MSISDN" />
+                <label for="searchByMSISDNTop"> MSISDN</label>
+                <br />
+                <label class="searchLabel labelprops" for="searchParameterTop"> IMSI:</label>
+                <input type="text" class="searchParam" id="searchParameterTop" value="420012000283814"/>
+            </fieldset>
+            <fieldset>
+                <legend>Visualization</legend>
+                <form id="validateForm" action="#">
+                <label class="labelprops" for="startDatepickerTop"> Date range:</label>
+                <input type="text" class="datepicker start" id="startDatepickerTop" placeholder="yyyy-mm-dd" value="2010-09-15" />
+                <label for="endDatepickerTop">
+                    to</label>
+                <input type="text" class="datepicker end" id="endDatepickerTop" placeholder="yyyy-mm-dd" value="2010-09-22"/>
+                </form>
+                <label  class="labelprops clearmargin" for="measureTypeTop"> Measure type:</label>
+				<select id="measureTypeTop" class="measureType">
+				  <option value="count">Number of calls</option>
+				  <option value="duration">Duration</option>
+				  <option value="ratedAmount">Rated amount</option>
+				  <option value="discountedAmount">Discounted amount</option>
+                </select>
+                <label class="leftmargin" for="aggregationTypeTop">Aggregation:</label>
+                <input type="radio" class="aggregationType" name="aggregationTypeTop" value="sum" checked="checked" />SUM
+                <input type="radio" class="aggregationType" name="aggregationTypeTop" value="avg" />AVG
+                <br />
+                <div class="clear"></div>
+                <div id="topRows">
+                </div>
+            </fieldset>
+            <button class="search">Search</button>
+        </div>
+    </div>
+    <div id="bottom">
+	  <ul>
+		<li><a href="#leftBottomTabs-1">Search profile</a></li>
+	  </ul>
+	  <div id="leftBottomTabs-1">
+		<fieldset>
+		  <legend>Search subscriber</legend>
+		  <input type="radio" id="searchByImsiBottom" name="searchByTypeBottom" class="searchByType" value="IMSI" checked="checked" />
+		  <label for="searchByImsiBottom"> IMSI</label>&nbsp;
+		  <input type="radio" id="searchByMSISDNBottom" name="searchByTypeBottom" value="MSISDN" />
+		  <label for="searchByMSISDNBottom"> MSISDN</label>
+		  <br />
+		  <label class="searchLabel labelprops" for="searchParameterBottom"> IMSI:</label>
+		  <input type="text" class="searchParam" id="searchParameterBottom"/>
+		</fieldset>
+		<fieldset>
+		  <legend>Visualization</legend>
+		  <label class="labelprops" for="startDatepickerBottom"> Data range:</label>
+		  <input type="text" class="datepicker start" id="startDatepickerBottom" placeholder="yyyy-mm-dd" />
+		  <label for="endDatepickerBottom">
+		  to</label>
+		  <input type="text" class="datepicker end" id="endDatepickerBottom" placeholder="yyyy-mm-dd" />
+		  <br />
+		  <label class="labelprops clearmargin" for="measureTypeBottom"> Measure type:</label>
+		  <select id="measureTypeBottom" class="measureType">
+			<option value="count">Number of calls</option>
+			<option value="duration">Duration</option>
+			<option value="ratedAmount">Rated amount</option>
+			<option value="discountedAmount">Discounted amount</option>
+		  </select>
+		  <label  class="leftmargin">Aggregation:</label>
+		  <input type="radio" class="aggregationType" name="aggregationTypeBottom" value="sum" checked="checked" />SUM
+		  <input type="radio" class="aggregationType" name="aggregationTypeBottom" value="avg" />AVG
+		  <div class="clear"></div>
+		  <div id="bottomRows">
+		  </div>
+		</fieldset>
+		<button class="search">Search</button>
+        
+	  </div>
+    </div>
+  </body>
+</html>

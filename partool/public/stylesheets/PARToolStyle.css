@@ -1,0 +1,167 @@
+body
+{
+    color: #222;
+    background: white;
+    font-family: "Helvetica Neue" , Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    font-size: 0.9em;
+}
+
+#leftTopTabs-1, #leftBottomTabs-1 {
+	padding: 1em 1em;
+}
+
+.logout {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	z-index: 10
+}
+
+html, body
+{
+	height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+	margin: 0;
+	padding: 0;
+}
+
+#top, #bottom {
+	height: 50%;
+	overflow-y: auto;
+}
+.chart
+{
+    float:left;
+}
+
+
+input[type="text"]:focus
+{
+    border-color: #666;
+}
+
+input[type="text"]
+{
+	margin: 0.5em 0;
+    padding: 3px;
+    background-color: white;
+    border: 1px solid #BBB;
+}
+
+fieldset
+{
+    padding: 4px 4px 4px 4px;
+    margin: 0 1em 0 0;
+    border: 1px solid #CCC;
+}
+
+.subscrQuery {
+	margin: 15px;
+	padding: 15px;
+}
+
+.subscrQuery label {
+	display: block;
+	margin-top: 6px;
+	padding: 5px;
+	width: 10em;
+	float: left;
+}
+
+.subscrQuery input[type="text"] {
+	width: 500px;
+}
+
+/*label {
+	font-weight: bold;
+}*/
+
+.itemsProperties label
+{
+    display: inline-block;
+    width: 60px;
+}
+
+button
+{
+    padding: 5px;
+    margin-top: 9px;
+}
+
+#gprsColor, #smsColor, #voiceColor, #mmsColor, #roamingColor {
+    width: 50px;
+}
+
+.ui-tabs {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.ui-tabs .ui-tabs-panel {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.close {
+	position: absolute;
+	right: 15px;
+	top: 12px;
+}
+.chartProperties{
+    position: absolute;
+    right: 1px;
+    top: 12px;
+}
+#bottom li .ui-icon-close 
+{ 
+float: left; 
+margin: 0.4em 0.2em 0 0; 
+cursor: pointer; 
+}
+#top li .ui-icon-close 
+{ 
+float: left; 
+margin: 0.4em 0.2em 0 0; 
+cursor: pointer; 
+}
+.labelprops{
+display: block;
+float:left;
+width: 8em;
+margin-top: 0.5em;
+margin-right:0.1em;
+text-align: right;
+}
+.clearmargin{
+margin-top:0em;
+}
+.extramargin{
+margin-top: 1em;
+}
+.leftmargin{ 
+margin-left:1em; 
+}
+.clear{
+clear:both;
+}
+#topRows, #bottomRows{
+float:left;
+position:relative;
+}
+.color{
+margin-left:1.5em;
+}
+.usage {
+width:5em;
+}
+.cdr{
+width:12.2em;
+}
+:root #measureTypeTop, #measureTypeBottom { height:1.6em \0/IE9; width:12.25em \0/IE9;}  /* IE9 */
